@@ -195,7 +195,7 @@ function gameOver() {
   function win() {
     const textBox = document.querySelector('#InputTextArea')
     const sendButton = document.querySelector('#SendButton')
-    textBox.value = "WINNER CHICKEN DINNER! | e-chat hangman orginally made by _yfb_sei"
+    textBox.value = "WINNER CHICKEN DINNER! | https:///github.com/yfbsei/E-chat-mods"
     sendButton.click()
     gameOver();
     startFirst()
