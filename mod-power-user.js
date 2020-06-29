@@ -66,7 +66,7 @@ firstResult = () => {
 
 check = () => {
     const img = document.querySelector('#account-search__result').firstElementChild.firstElementChild
-    if (img.naturalHeight < 99 && img.naturalWidth < 99 ) {
+    if (img.naturalHeight > 40 && img.naturalWidth > 40 ) { // change img.naturalHeight > 40 && img.naturalWidth > 40 TO img.naturalHeight < 99 && img.naturalWidth < 99 if want to use only on guests
         firstResult()
     }
 }
