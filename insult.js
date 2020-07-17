@@ -1,6 +1,3 @@
-var textBox = document.querySelector('#InputTextArea')
-var sendButton = document.querySelector('#SendButton')
-
 //---Dom Mutaion| 
 var targetNode = document.querySelector('.chat-box-layer__messages')
 
