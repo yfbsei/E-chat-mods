@@ -7,7 +7,7 @@ var x = document.getElementsByClassName('message__avatar')
 
 getId = () => {
 for (i = 0; i < x.length; i++) {
-  if (x[i].naturalWidth < 99) {
+  if (x[i].naturalWidth < 60) {
     const pu = x[i].src.substr(41, 36)
     ava.push(pu);
   }
