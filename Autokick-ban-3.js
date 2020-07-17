@@ -1,5 +1,6 @@
-
 //Chrome
+setInterval(() => location.reload(), 200000)
+
 var ava = []
 var cleanava;
 var x = document.getElementsByClassName('message__avatar')
@@ -34,6 +35,8 @@ setInterval(clean, 2000);
 -------------------------------------------------------------------*/
 
 //Edge
+//setInterval(() => location.reload(), 200000)
+
 var ava = []
 var x = document.getElementsByClassName('message__avatar')
 
@@ -56,4 +59,3 @@ cleanava.length = 0;
 }
 
 setInterval(whole, 1000);
-
