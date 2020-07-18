@@ -22,7 +22,10 @@ const callback = function(mutationsList) {
               const userText = userMessage.innerText     
               
               const com = new RegExp("!insult:");
-              const checkCommand = com.test(userText)
+              const checkCommand = com.test(userText);
+
+              const comOne = new RegExp("!compliment:");
+              const checkCommandOne = comOne.test(userText);
 
       if (naturalHeight > 99  && checkCommand === true ) {
             const use = userText.slice(9);
@@ -36,9 +39,23 @@ const callback = function(mutationsList) {
                 "you are a cerebrally deformed mongoloid, dropped from the ghastly gutter gape of the local, semen gargling, $3 AIDS-infested whore",
                 "you miserably misshapen minuscule mark of muck and mold!"
               ];
-            CometdRoom.sendMessage(`${use}: ${myArray[Math.floor(Math.random()*myArray.length)]}`)
+            CometdRoom.sendMessage(`${use}: ${myArray[Math.floor(Math.random()*myArray.length)]}`);
            
             } 
+            else if (naturalHeight > 99  && checkCommandOne === true ) {
+                const use = userText.slice(13);
+                var myArrayOne = [
+                    "Message1",
+                    "Message2",
+                    "Message3",
+                    "Message4",
+                    "Message5",
+                    "Message6",
+                    "Message7",
+                    "Message8"
+                ];
+                CometdRoom.sendMessage(`${use}: ${myArrayOne[Math.floor(Math.random()*myArrayOne.length)]}`);
+            }
         }
     }
 };
@@ -47,5 +64,3 @@ const callback = function(mutationsList) {
 const observer = new MutationObserver(callback);
 
 observer.observe(targetNode, config);
-
-//-----
