@@ -8,7 +8,7 @@ var x = document.getElementsByClassName('message__avatar')
 getId = () => {
 for (i = 0; i < x.length; i++) {
   if (x[i].naturalWidth === 50 && x[i].naturalHeight === 50) {
-    const pu = x[i].src.substr(41, 36)
+    const pu = x[i].src.substring(41, 77);
     ava.push(pu);
   }
 }
@@ -21,8 +21,8 @@ cleanava.forEach(kick = (item, index) => {
 //console.log(index + ": " + item); 
 CometdModerator.kickAccount(item);
 CometdModerator.removeAccountMessages(item);
+cleanava.shift();
 });
-cleanava.length = 0;
 ava.length = 0;
 }
 
