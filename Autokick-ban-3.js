@@ -40,7 +40,7 @@ validate();
 kick = () => {
   validated.forEach(kickEach = (item) => {
     CometdModerator.removeAccountMessages(item);
-    CometdModerator.kickAccount(item);
+    //CometdModerator.kickAccount(item);
   });
 }
 kick();
