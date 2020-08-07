@@ -23,7 +23,7 @@ const callback = function(mutationsList) {
               const userMessage = mutation.addedNodes[0].lastElementChild.lastElementChild
               const userText = userMessage.innerText     
               
-              const com = new RegExp("!music:"); 
+              const com = new RegExp("!title:"); 
               const checkCommand = com.test(userText)
 
       if (naturalHeight > 100  && checkCommand === true ) {
@@ -48,7 +48,7 @@ const callback = function(mutationsList) {
             }
             generateInfo(apiUrl)
             .then(data => youTubeTitle = data.items[0].snippet.title)
-            setTimeout(function(){ CometdRoom.sendMessage(`${printUserName}, Title of your YouTube video is: ${youTubeTitle}`) }, 2000);
+            setTimeout(function(){ CometdRoom.sendMessage(`${printUserName}, Title of your YouTube video is: ${youTubeTitle}`) }, 1000);
       }
         }
     }
