@@ -48,7 +48,7 @@ const callback = function(mutationsList) {
             }
             generateInfo(apiUrl)
             .then(data => youTubeTitle = data.items[0].snippet.title)
-            setTimeout(function(){ CometdRoom.sendMessage(`${printUserName}, Title of your YouTube video is: ${youTubeTitle}`) }, 1000);
+            setTimeout(function(){ CometdRoom.sendMessage(`${printUserName}, Title of your YouTube video is: ${youTubeTitle}`) }, 2000);
       }
         }
     }
