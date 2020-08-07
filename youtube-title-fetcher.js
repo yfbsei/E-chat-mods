@@ -58,4 +58,3 @@ const callback = function(mutationsList) {
 const observer = new MutationObserver(callback);
 
 observer.observe(targetNode, config);
-
