@@ -28,7 +28,7 @@ const callback = function(mutationsList) {
 
       if (naturalHeight > 100  && checkCommand === true ) {
              let url = userText.slice(8);
-             var apiKey = "AIzaSyAuoPbCRVQIafk4G7VO0o5ge05qNqpvhvE";         
+             var apiKey = "AIzaSyAuoPbCRVQIafk4G7VO0o5ge05qNqpvhvE"; // This is only Demo Key REPLACE with your key         
              
              function getVideoId(url) {
                 var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
