@@ -1,0 +1,1 @@
+const img = Array.from(document.querySelectorAll(".UsersListAvatar")).filter(check => check.naturalHeight > 51).map(id => id.src.substring(41, 77)).forEach((x, i) => {setTimeout(() => {CometdConversation.open(x), CometdConversation.sendMessage('hi', x), CometdConversation.close(x)}, i * 7500)});
