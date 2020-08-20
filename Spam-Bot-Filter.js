@@ -2,7 +2,7 @@ let count = 0;
 let spamBanned = 0;
 let guestBanned = 0;
 const messages = [];
-const wordList = ['Pm', 'pm', 'PM', 'https', 'http', 'Dm', 'Skype', 'x︍︍︍x︍︍ld︍︍︍a︍︍te︍︍︍.c︍︍︍o︍︍︍︍︍︍m', '.cc', 'app.unsee', 'inch', 'INCH', 'horny', 'BBC', 'message', 'snap', 'snapchat', 'discord', '.com', 'insta', 'instagram', '.site', '.SITE', '.︍︍︍︍︍p︍︍︍︍︍︍w', '.co', '.ca', 'www.', 'W︍︍W︍︍W︍︍︍︍.', 'snepchat', 'nudez', 'nudes', 'S`napchat', 'cam', 'cock', '.club', 'porn', 'Snapchat', 'sex chat', 'Any females here', 'any indian girl', 'chat'];
+const wordList = ['Pm', 'pm', 'PM','mom','MOM','talk to me', 'https', 'http', 'Dm', 'Skype', 'x︍︍︍x︍︍ld︍︍︍a︍︍te︍︍︍.c︍︍︍o︍︍︍︍︍︍m', '.cc', 'app.unsee', 'inch', 'INCH', 'horny', 'BBC', 'message', 'snap', 'snapchat', 'discord', '.com', 'insta', 'instagram', '.site', '.SITE', '.︍︍︍︍︍p︍︍︍︍︍︍w', '.co', '.ca', 'www.', 'W︍︍W︍︍W︍︍︍︍.', 'snepchat', 'nudez', 'nudes', 'S`napchat', 'cam', 'cock', '.club', 'porn', 'Snapchat', 'sex chat', 'Any females here', 'any indian girl', 'chat'];
 ban = id => {
     CometdConversation.open(id), CometdConversation.sendMessage('Banned for 10min: Flagged for potentially spamming', id), CometdConversation.close(id), CometdModerator.banAccount(id), CometdModerator.removeAccountMessages(id), count = 0, messages.length = 0, spamBanned = spamBanned + 1;
 };
