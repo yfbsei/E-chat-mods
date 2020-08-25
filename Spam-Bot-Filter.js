@@ -36,7 +36,7 @@ const callback = function(mutationsList) {
 
             messages.includes(userMessage) ? count = count + 1 : count = 0, messages.length = 0;
             messages.push(userMessage);
-            if (count === 1) {
+            if (count === 2) {
                 ban(userAvatar.src.substring(41, 77))
             };
 
