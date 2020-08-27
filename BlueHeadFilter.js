@@ -1,3 +1,5 @@
+// Close ALL pm's !! before running code!!!!
+
 let user;
 let myId = AccountController.getId(); // comment out if dont want this feature
 let unBan = [];
