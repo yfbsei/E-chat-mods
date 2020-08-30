@@ -40,7 +40,6 @@ const callback = function(mutationsList) {
                 ban(userAvatar.src.substring(41, 77))
             };
 
-            wordList.some(v => userMessage === v) ? console.log('found') : console.log('false')
             userAvatar.naturalHeight < 51 && wordList.some(rx => rx.test(userMessage)) ? banGuest(userAvatar.src.substring(41, 77), userMessage) : false;
         }
     } 
