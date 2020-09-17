@@ -1,33 +1,33 @@
 # E-chat-mods
 How to use: On the tab of your Mod account of room. Click inspect than click console. Paste code from index.js in your browsers console. Preferably google chorme. 
-
+<br/>
 Enter any of the following commands in chat.
-
+<br/>
 Commands:
-
-Rank 6:
-addUser: username
-rankUp: username
-rankDown: username
-
-Rank 5:
-removeAllUsers
-removeAllWords
-removeWord: word
-addWord: word
-
-Rank 4:
-ban: username
-wordFilterOn
-wordFilterOff
-blueFilterOn
-blueFilterOff
-
-Rank 3:
-spamFilterOn
-spamFilterOff
-kick: username
-
-Any Registerd user:
-rankOf: username
-!commands
+<br/>
+Rank 6: <br/>
+addUser: username <br/>
+rankUp: username <br/> 
+rankDown: username <br/>
+<br/>
+Rank 5: <br/>
+removeAllUsers <br/>
+removeAllWords <br/>
+removeWord: word <br/>
+addWord: word <br/>
+<br/>
+Rank 4: <br/>
+ban: username <br/>
+wordFilterOn <br/>
+wordFilterOff <br/>
+blueFilterOn <br/>
+blueFilterOff <br/>
+<br/>
+Rank 3: <br/>
+spamFilterOn <br/>
+spamFilterOff <br/>
+kick: username <br/>
+<br/>
+Any Registerd user: <br/>
+rankOf: username <br/>
+!commands <br/>
