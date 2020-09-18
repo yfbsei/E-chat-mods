@@ -107,7 +107,7 @@ const userCommands = {
                 })
             },
             blueFilterOn() {
-                blueFilterLoop = setInterval(userCommands.roomController.blueFilterOnOff.blueFilter(), 3333)
+                blueFilterLoop = setInterval(()=>{userCommands.roomController.blueFilterOnOff.blueFilter()}, 3333)
             },
             blueFilterOff() {
                 clearInterval(blueFilterLoop)
@@ -219,7 +219,18 @@ const userCommands = {
             if (banOrkick === 'kick') {
                 CometdModerator.kickAccount(id), CometdModerator.removeAccountMessages(id)
             };
-        }
+        },
+
+        unBanUser(unban, min) {
+        setInterval(() => {
+          if (document.querySelector('#moderator-page__banned').childElementCount >= 1) {
+            unban === 'all' ? Array.from(document.querySelectorAll('.ModeratorPanelBannedUserAvatar')).map(id => id.src.slice(-48, -12)).forEach(id => CometdModerator.unbanAccount(id)) :
+            unban === 'guests' ? Array.from(document.querySelectorAll('.ModeratorPanelBannedUserAvatar')).filter(diminson => diminson.naturalHeight <= 51).map(id => id.src.slice(-48, -12)).forEach(id => CometdModerator.unbanAccount(id)) :
+            unban === 'users' ? Array.from(document.querySelectorAll('.ModeratorPanelBannedUserAvatar')).filter(diminson => diminson.naturalHeight >= 51).map(id => id.src.slice(-48, -12)).forEach(id => CometdModerator.unbanAccount(id)) 
+            : false
+          };
+        }, min*60000);  
+          }
 
     }
 
@@ -258,9 +269,13 @@ const forRankUsers = (userInfo, rank) => {
     }
 };
 
-export {
-    UserProp,
-    getRankFromMessage,
-    forGenralUsers,
-    forRankUsers
-};
+const readChat = new MutationObserver(mutationsList => {
+    for (const messages of mutationsList) {
+        const userData = new UserProp(messages.addedNodes[0].children[0].src.slice(-48, -12), messages.addedNodes[0].children[1].firstChild.firstChild.textContent, messages.addedNodes[0].children[0].naturalHeight, messages.addedNodes[0].children[1].lastChild.textContent);
+        forRankUsers(userData, getRankFromMessage(userData.userName)), forGenralUsers(userData)
+    }
+});
+readChat.observe(document.querySelector('.chat-box-layer__messages'), {
+    attributes: true,
+    childList: true,
+});
