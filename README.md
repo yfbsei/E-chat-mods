@@ -31,3 +31,5 @@ kick: username <br/>
 Any Registerd user: <br/>
 rankOf: username <br/>
 !commands <br/>
+
+Won't continue to update due to e-chat admin abuse. 
