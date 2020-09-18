@@ -6,7 +6,7 @@ let blueFilterLoop;
 const modId = document.querySelector('.UsersListStarIcon').parentNode.firstChild.src.slice(-48, -12);
 
 const getId = name => {
-    return Array.from(new Set(Array.from(document.querySelectorAll(".UsersListUserWrapper")).filter(check => check.children[1].textContent === name).map(id => id.children[0].src.slice(-48, -12)))).toString();
+    return Array.from(document.querySelectorAll(".UsersListUserWrapper")).filter(check => check.children[1].innerText === name).map(id => id.children[0].src.slice(-48, -12)).toString();
 };
 
 const getRankFromMessage = name => {
@@ -214,10 +214,12 @@ const userCommands = {
 
         banOrKickAccount(banOrkick, id) {
             if (banOrkick === 'ban') {
-                CometdModerator.banAccount(id), CometdModerator.removeAccountMessages(id)
+                CometdModerator.banAccount(id)
+                CometdModerator.removeAccountMessages(id)
             }
             if (banOrkick === 'kick') {
-                CometdModerator.kickAccount(id), CometdModerator.removeAccountMessages(id)
+                CometdModerator.kickAccount(id)
+                CometdModerator.removeAccountMessages(id)
             };
         },
 
@@ -268,14 +270,3 @@ const forRankUsers = (userInfo, rank) => {
             false;
     }
 };
-
-const readChat = new MutationObserver(mutationsList => {
-    for (const messages of mutationsList) {
-        const userData = new UserProp(messages.addedNodes[0].children[0].src.slice(-48, -12), messages.addedNodes[0].children[1].firstChild.firstChild.textContent, messages.addedNodes[0].children[0].naturalHeight, messages.addedNodes[0].children[1].lastChild.textContent);
-        forRankUsers(userData, getRankFromMessage(userData.userName)), forGenralUsers(userData)
-    }
-});
-readChat.observe(document.querySelector('.chat-box-layer__messages'), {
-    attributes: true,
-    childList: true,
-});
