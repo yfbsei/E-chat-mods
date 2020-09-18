@@ -279,5 +279,5 @@ const readChat = new MutationObserver(mutationsList => {
 });
 readChat.observe(document.querySelector('.chat-box-layer__messages'), {
     attributes: true,
-    childList: true,
+    childList: true
 });
